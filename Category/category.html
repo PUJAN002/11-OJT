@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Categories</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background:#fff;
+      color:#111;
+      margin: 20px auto;
+    }
+
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;  
+  z-index: 999;      
+  background-color: rgba(0, 0, 0, 0.7); 
+}
+
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.new-badge {
+  background-color: #7d55ff;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 8px;
+  margin-left: 5px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-icon {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1);
+}
+
+    .breadcrumbs{font-size:14px;color:#555;margin-bottom:10px;}
+    .main-title{font-size:28px;margin-bottom:20px;}
+
+    /* GRID */
+    .container{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:20px;
+      grid-row: auto;
+      margin: 0 auto;
+      max-width: 80%;
+    }
+
+    /* COMMON CARD STYLE */
+    .container > div{
+      background:#f6f7fa;
+      padding:15px;
+      border-radius:8px;
+      box-shadow:0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    /* INDIVIDUAL GRID SPAN */
+    .one     {grid-row:span 1;}
+    .two     {grid-row:span 1;}
+    .three   {grid-row:span 2;}
+    .four    {grid-row:span 3;}
+    .five    {grid-row:span 1;}
+    .six     {grid-row:span 5;}
+    .seven   {grid-row:span 1;}
+    .eight   {grid-row:span 5;}
+    .nine    {grid-row:span 4;}
+    .fourteen{grid-row:span 5;}
+    .eleven  {grid-row:span 4;}
+    .twelve  {grid-row:span 3;}
+    .thirteen{grid-row:span 4;}
+    .fifteen {grid-row:span 5;}
+    .sixteen {grid-row:span 3;} 
+
+    .category-header{display:flex;align-items:center;margin-bottom:10px}
+    .category-header img{width:30px;height:30px;margin-right:10px;}
+    .category h3{margin:0;font-size:16px;}
+    .category ul{list-style:none;padding:0;margin:0;}
+    .category ul li{margin-bottom:8px;font-size:14px;color:#222;}
+    .category ul li:hover{color:#0073e6;cursor:pointer;}
+    .new-tag{background:#0073e6;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;margin-left:5px;}
+
+    @media(max-width:768px){
+      .container{grid-template-columns:repeat(2,1fr);}
+    }
+    @media(max-width:480px){
+      .container{grid-template-columns:1fr;}
+      .container > div{grid-row:unset;}
+    }
+  </style>
+</head>
+<body>
+
+     <div class="navbar">
+      <a href="../Home/home.html" style="text-decoration: none;"><div class="logo">VERSUS</div></a>
+      <ul class="nav-links">
+        <li><a href="../Category/category.html">CATEGORIES</a></li>
+        <li><a href="../SmartPhone/phone.html">SMARTPHONES</a></li>
+        <li><a href="../GraphicCards/graphic.html">GRAPHICCARDS</a></li>
+        <li><a href="../CPU/cpu.html">CPUS</a></li>
+        <li><a href="../Keyboard/keyboard.html">KEYBOARDS <span class="new-badge">NEW</span></a></li>
+      </ul>
+      <div class="nav-right">
+        <span>EN</span>
+        <img src="../images/account.png" class="user-icon" />
+      </div>
+    </div>
+    </div>
+
+
+  <div class="breadcrumbs">Home &gt; Categories</div>
+  <h1 class="main-title">Categories</h1>
+
+        <div class="container">
+        <div class="one category">
+      <div class="category-header"><img src="../images/categoryimg/a.svg" alt=""><h3>Mobile Devices</h3></div>
+      <ul><li>Smartphones</li><li>Tablets</li><li>E-Readers</li></ul>
+    </div>
+
+    <div class="two category">
+      <div class="category-header"><img src="../images/categoryimg/d.svg" alt=""><h3>Wearables</h3></div>
+      <ul><li>Smartwatches</li><li>Fitness Trackers</li><li>Sports Watches</li></ul>
+    </div>
+
+    <div class="three category">
+      <div class="category-header"><img src="../images/categoryimg/g.svg" alt=""><h3>Photo & Video</h3></div>
+      <ul><li>Cameras</li><li>Camera Lenses</li><li>Camcorders</li><li>Action Cameras</li></ul>
+    </div>
+
+    <div class="four category">
+      <div class="category-header"><img src="../images/categoryimg/i.svg" alt=""><h3>Audio</h3></div>
+      <ul>
+        <li>Headphones</li><li>Wireless Earbuds</li><li>PC And Gaming Headsets</li><li>Bluetooth Headsets</li>
+        <li>Portable Speakers</li><li>Smart Speakers</li><li>Soundbars</li><li>Microphones</li><li>Voice Recorders</li>
+        <li>DJ Controllers</li><li>MIDI Controllers</li><li>Record Players</li>
+      </ul>
+    </div>
+
+    <div class="five category">
+      <div class="category-header"><img src="../images/categoryimg/l.svg" alt=""><h3>Computer Components</h3></div>
+      <ul>
+        <li>Graphics Cards</li><li>CPUs</li><li>Enterprise CPUs</li><li>Mobile Chipsets</li><li>Motherboards</li>
+        <li>SSDs</li><li>Memory</li><li>PC Cases</li>
+      </ul>
+    </div>
+
+    <div class="six category">
+      <div class="category-header"><img src="../images/categoryimg/b.svg" alt=""><h3>Computers & Accessories</h3></div>
+      <ul>
+        <li>Laptops</li><li>Gaming PCs</li><li>All-In-One Computers</li><li>Mini PCs</li><li>Monitors</li><li>Routers</li>
+        <li>Wi-Fi Extenders</li><li>Keyboards <span class="new-tag">NEW</span></li><li>Mice</li><li>Game Controllers</li>
+        <li>Webcams</li><li>Drawing Tablets</li><li>Single Board Computers</li>
+      </ul>
+    </div>
+    
+
+      <div class="fourteen category">
+      <div class="category-header"><img src="../images/categoryimg/f.svg" alt=""><h3>Home & Garden</h3></div>
+      <ul>
+        <li>Air Fryers</li><li>Pressure Cookers</li><li>Vacuum Cleaners</li><li>Robot Vacuum Cleaners</li><li>Washing Machines</li>
+        <li>Combo Washer Dryers</li><li>Tumble Dryers</li><li>Coffee Machines</li><li>Commercial Coffee Machines</li>
+        <li>Refrigerators</li><li>Dishwashers</li><li>Robotic Lawn Mowers</li><li>Lawn Mowers</li><li>Heat Pumps</li>
+        <li>Air Purifiers</li><li>Portable Air Conditioners</li><li>Portable Power Stations</li><li>Drills</li>
+      </ul>
+    </div>
+    <!-- <div class="seven category">
+      <div class="category-header"><img src="images/h.svg" alt=""><h3>Printers & Scanners</h3></div>
+      <ul><li>Printers</li><li>3D Printers</li><li>Scanners</li></ul>
+    </div> -->
+
+    <div class="eight category">
+      <div class="category-header"><img src="../images/categoryimg/q.svg" alt=""><h3>Entertainment</h3></div>
+      <ul>
+        <li>Video Streaming Services</li><li>Streaming Devices</li><li>Game Consoles</li><li>VR Headsets</li><li>Projectors</li><li>TVs</li><li>Drones</li>
+      </ul>
+    </div>
+
+    <div class="nine category">
+      <div class="category-header"><img src="../images/categoryimg/k.svg" alt=""><h3>Apps & Software</h3></div>
+      <ul>
+        <li>Messaging Apps</li><li>Dating Apps</li><li>Health & Fitness Apps</li><li>Productivity Apps</li><li>Photography Apps</li>
+        <li>Calendar Apps</li><li>Weather Apps</li><li>MV* Frameworks</li><li>OS</li><li>DJ Software</li>
+      </ul>
+    </div>
+
+    <div class="eleven category">
+      <div class="category-header"><img src="../images/categoryimg/n.svg" alt=""><h3>Education</h3></div>
+      <ul>
+        <li>Universities</li><li>Art And Design Schools</li><li>Business Schools</li><li>Medical Schools</li>
+        <li>Law Schools</li><li>Technology And Engineering Schools</li><li>Colleges And Graduate Schools</li>
+      </ul>
+    </div>
+
+
+    <div class="fifteen category">
+      <div class="category-header"><img src="../images/categoryimg/m.svg" alt=""><h3>Foods</h3></div>
+      <ul><li>Fruits</li><li>Vegetables</li><li>Legumes</li><li>Fish</li><li>Seeds</li><li>Nuts</li><li>Oils</li><li>Fats</li></ul>
+    </div>
+
+    <!-- <div class="twelve category">
+      <div class="category-header"><img src="images/c.svg" alt=""><h3>Travel</h3></div>
+      <ul><li>Cities</li><li>Countries</li><li>Ski Resorts</li></ul>
+    </div> -->
+
+    <div class="thirteen category">
+      <div class="category-header"><img src="../images/categoryimg/e.svg" alt=""><h3>Transportation</h3></div>
+      <ul><li>Electric Scooters</li><li>Electric Bikes</li><li>GPS Navigation Systems</li><li>Bike Lights</li><li>Cars</li></ul>
+    </div>
+
+    <!-- <div class="fourteen category">
+      <div class="category-header"><img src="images/f.svg" alt=""><h3>Home & Garden</h3></div>
+      <ul>
+        <li>Air Fryers</li><li>Pressure Cookers</li><li>Vacuum Cleaners</li><li>Robot Vacuum Cleaners</li><li>Washing Machines</li>
+        <li>Combo Washer Dryers</li><li>Tumble Dryers</li><li>Coffee Machines</li><li>Commercial Coffee Machines</li>
+        <li>Refrigerators</li><li>Dishwashers</li><li>Robotic Lawn Mowers</li><li>Lawn Mowers</li><li>Heat Pumps</li>
+        <li>Air Purifiers</li><li>Portable Air Conditioners</li><li>Portable Power Stations</li><li>Drills</li>
+      </ul>
+    </div> -->
+    <div class="seven category">
+      <div class="category-header"><img src="../images/categoryimg/h.svg" alt=""><h3>Printers & Scanners</h3></div>
+      <ul><li>Printers</li><li>3D Printers</li><li>Scanners</li></ul>
+    </div>
+
+    <div class="twelve category">
+      <div class="category-header"><img src="../images/categoryimg/c.svg" alt=""><h3>Travel</h3></div>
+      <ul><li>Cities</li><li>Countries</li><li>Ski Resorts</li></ul>
+    </div>
+    <!-- <div class="fifteen category">
+      <div class="category-header"><img src="images/m.svg" alt=""><h3>Foods</h3></div>
+      <ul><li>Fruits</li><li>Vegetables</li><li>Legumes</li><li>Fish</li><li>Seeds</li><li>Nuts</li><li>Oils</li><li>Fats</li></ul>
+    </div> -->
+
+    <div class="sixteen category">
+      <div class="category-header"><img src="../images/categoryimg/o.svg" alt=""><h3>Soccer</h3></div>
+      <ul><li>German Soccer Clubs</li><li>National Soccer Teams</li></ul>
+    </div>
+  </div>
+
+</body>
+</html>

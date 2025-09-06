@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Performance and Battery</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+  body {
+    margin: 0;
+    background-color: #f0f4fa;
+    font-family: 'Inter', sans-serif;
+    color: #1a1a1a;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+  }
+
+  h2 {
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* icon before the heading */
+  h2.performance::before {
+    content: '⏱️';
+    font-size: 1.5rem;
+  }
+
+  h2.battery::before {
+    content: '🔋';
+    font-size: 1.5rem;
+  }
+
+  .cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    flex: 1 1 300px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card strong {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+
+  /* Values on top of progress bars container */
+  .values {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+
+  /* progress bar container */
+  .progress-group {
+    position: relative;
+    margin-bottom: 12px;
+  }
+
+  /* main gray background bars */
+  .progress-bg {
+    height: 6px;
+    border-radius: 6px;
+    background-color: #d9d9d9;
+  }
+
+  /* first bar */
+  .progress-bar1 {
+    position: absolute;
+    height: 6px;
+    border-radius: 6px;
+    top: 0;
+    left: 0;
+  }
+
+  /* second bar */
+  .progress-bar2 {
+    position: absolute;
+    height: 6px;
+    border-radius: 6px;
+    top: 6px; /* offset second bar below the first */
+    left: 0;
+  }
+
+  /* text under bars */
+  .description {
+    font-size: 0.75rem;
+    color: #8f8f8f;
+    line-height: 1.2;
+  }
+
+  /* Different colors for each bar */
+
+  /* Performance Section */
+  .internal-storage .progress-bar1 {
+    width: 100%;
+    background: #3039f9; /* blue */
+  }
+  .internal-storage .progress-bar2 {
+    width: 100%;
+    background: #ca0000; /* red */
+    top: 12px; /* stacked under the first bar */
+  }
+
+  .ram .progress-bar1 {
+    width: 33.33%;
+    background: #3039f9;
+  }
+  .ram .progress-bar2 {
+    width: 50%;
+    background: #ca0000;
+    top: 12px;
+  }
+
+  .antutu .progress-bar1 {
+    width: 33.33%;
+    background: #3039f9;
+  }
+  .antutu .progress-bar2 {
+    width: 37.5%;
+    background: #ca0000;
+    top: 12px;
+  }
+
+  /* Battery Section */
+  .battery-power .progress-bar1 {
+    width: 93.5%;
+    background: #3039f9;
+  }
+  .battery-power .progress-bar2 {
+    width: 100%;
+    background: #ca0000;
+    top: 12px;
+  }
+
+  .charging-speed .progress-bar1 {
+    width: 100%;
+    background: #3039f9;
+  }
+  .charging-speed .progress-bar2 {
+    width: 53.3%;
+    background: #ca0000;
+    top: 12px;
+  }
+
+  .wireless-speed .progress-bar1 {
+    width: 66.6%;
+    background: #3039f9;
+  }
+  .wireless-speed .progress-bar2 {
+    width: 40%;
+    background: #ca0000;
+    top: 12px;
+  }
+
+  /* For aligning second bars lower and smaller height */
+
+  .progress-group {
+    height: 18px; /* space for two bars stacked */
+  }
+
+  .progress-bar1 {
+    top: 0;
+    height: 6px;
+  }
+  .progress-bar2 {
+    top: 12px;
+    height: 6px;
+  }
+
+  @media (max-width: 900px) {
+    .cards {
+      flex-direction: column;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h2 class="performance">Performance</h2>
+    <div class="cards">
+      <div class="card internal-storage">
+        <strong>Internal Storage</strong>
+        <div class="values">
+          <span>1024GB</span>
+          <span>1024GB</span>
+        </div>
+        <div class="progress-group">
+          <div class="progress-bg"></div>
+          <div class="progress-bar1"></div>
+          <div class="progress-bar2"></div>
+        </div>
+        <div class="description">
+          The internal storage refers to the built-in storage space available in a device for system data, apps, and user generated data.
+        </div>
+      </div>
+
+      <div class="card ram">
+        <strong>Ram</strong>
+        <div class="values">
+          <span>8GB</span>
+          <span>12GB</span>
+        </div>
+        <div class="progress-group">
+          <div class="progress-bg"></div>
+          <div class="progress-bar1"></div>
+          <div class="progress-bar2"></div>
+        </div>
+        <div class="description">
+          Random-access memory (RAM) is a form of memory used to store working data and machine code.
+        </div>
+      </div>
+
+      <div class="card antutu">
+        <strong>AnTuTu benchmark score</strong>
+        <div class="values">
+          <span>1947255</span>
+          <span>2207809</span>
+        </div>
+        <div class="progress-group">
+          <div class="progress-bg"></div>
+          <div class="progress-bar1"></div>
+          <div class="progress-bar2"></div>
+        </div>
+        <div class="description">
+          AnTuTu is one of the most important benchmarks for Android devices.
+        </div>
+      </div>
+    </div>
+
+    <h2 class="battery">Battery</h2>
+    <div class="cards">
+      <div class="card battery-power">
+        <strong>Battery Power</strong>
+        <div class="values">
+          <span>4676 mAh</span>
+          <span>5000 mAh</span>
+        </div>
+        <div class="progress-group">
+          <div class="progress-bg"></div>
+          <div class="progress-bar1"></div>
+          <div class="progress-bar2"></div>
+        </div>
+        <div class="description">
+          Battery power represents the amount of electrical energy that a battery can store.
+        </div>
+      </div>
+
+      <div class="card charging-speed">
+        <strong>Charging speed</strong>
+        <div class="values">
+          <span>45W</span>
+          <span>45W</span>
+        </div>
+        <div class="progress-group">
+          <div class="progress-bg"></div>
+          <div class="progress-bar1"></div>
+          <div class="progress-bar2"></div>
+        </div>
+        <div class="description">
+          Charging speeds are expressed in watts (W), a measure of electrical power. A higher wattage results in faster charging.
+        </div>
+      </div>
+
+      <div class="card wireless-speed">
+        <strong>Wireless charging speed</strong>
+        <div class="values">
+          <span>25W</span>
+          <span>15W</span>
+        </div>
+        <div class="progress-group">
+          <div class="progress-bg"></div>
+          <div class="progress-bar1"></div>
+          <div class="progress-bar2"></div>
+        </div>
+        <div class="description">
+          Charging speeds are expressed in watts (W), a measure of electrical power. A higher wattage results in a faster charging speed.
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Radar Chart Comparison</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      background: #f6f7fb;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .container {
+      display: flex;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      padding: 30px;
+      width: 350px;
+      text-align: center;
+    }
+
+    canvas {
+      width: 100%;
+      height: auto;
+    }
+
+    .icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .icon-box {
+      background: #f0f0f0;
+      padding: 8px;
+      border-radius: 6px;
+      font-size: 18px;
+    }
+
+    .scores {
+      margin-top: 12px;
+      font-size: 16px;
+    }
+
+    .blue {
+      color: #3b82f6;
+      font-weight: bold;
+    }
+
+    .red {
+      color: #f43f5e;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Left Card -->
+    <div class="card">
+      <canvas id="chart1"></canvas>
+      <div class="icons">
+        <div class="icon-box">📱</div>
+        <div class="icon-box">🖥️</div>
+        <div class="icon-box">📷</div>
+        <div class="icon-box">⚙️</div>
+        <div class="icon-box">💾</div>
+        <div class="icon-box">📈</div>
+        <div class="icon-box">🎵</div>
+        <div class="icon-box">📁</div>
+      </div>
+      <div class="scores">
+        <span class="blue">83</span> Points &nbsp;&nbsp;
+        <span class="red">100</span> Points
+      </div>
+    </div>
+
+    <!-- Right Card -->
+    <div class="card">
+      <canvas id="chart2"></canvas>
+      <div class="icons">
+        <div class="icon-box">📱</div>
+        <div class="icon-box">🖥️</div>
+        <div class="icon-box">📷</div>
+        <div class="icon-box">⚙️</div>
+        <div class="icon-box">💾</div>
+        <div class="icon-box">📈</div>
+        <div class="icon-box">🎵</div>
+        <div class="icon-box">📁</div>
+      </div>
+      <div class="scores">
+        <span class="blue">83</span> Points &nbsp;&nbsp;
+        <span class="red">100</span> Points
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function createGradient(ctx, colorStops) {
+      const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+      colorStops.forEach(stop => gradient.addColorStop(stop.position, stop.color));
+      return gradient;
+    }
+
+    function createRadarChart(ctx, dataset1ColorStops, dataset2ColorStops, data1, data2) {
+      const gradient1 = createGradient(ctx, dataset1ColorStops);
+      const gradient2 = createGradient(ctx, dataset2ColorStops);
+
+      new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['Design', 'Display', 'Performance', 'Cameras', 'Operating System', 'Battery', 'Audio', 'Features'],
+          datasets: [
+            {
+              label: 'Device A',
+              data: data1,
+              backgroundColor: gradient1,
+              borderColor: 'transparent',
+              pointBackgroundColor: 'white',
+              pointRadius: 4
+            },
+            {
+              label: 'Device B',
+              data: data2,
+              backgroundColor: gradient2,
+              borderColor: 'transparent',
+              pointBackgroundColor: 'white',
+              pointRadius: 4
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false }
+          },
+          scales: {
+            r: {
+              grid: { display: false },
+              angleLines: { display: false },
+              ticks: { display: false },
+              pointLabels: {
+                font: { size: 13 },
+                color: '#555'
+              },
+              suggestedMin: 0,
+              suggestedMax: 10
+            }
+          }
+        }
+      });
+    }
+
+    window.onload = function () {
+      const ctx1 = document.getElementById('chart1').getContext('2d');
+      const ctx2 = document.getElementById('chart2').getContext('2d');
+
+      // Chart 1 gradient: purple to red (overlay)
+      createRadarChart(
+        ctx1,
+        [
+          { position: 0, color: 'rgba(91,33,182,0.7)' }, // blue-purple
+          { position: 1, color: 'rgba(255,0,0,0.7)' }    // red
+        ],
+        [
+          { position: 0, color: 'rgba(255,0,0,0.5)' },   // red
+          { position: 1, color: 'rgba(255,100,100,0.5)' }
+        ],
+        [6, 7, 8, 9, 6, 4, 3, 9], // Device A
+        [8, 9, 9, 10, 8, 7, 5, 10] // Device B
+      );
+
+      // Chart 2 gradient: red to pink (Device B only)
+      createRadarChart(
+        ctx2,
+        [], // Only one dataset needed here
+        [
+          { position: 0, color: 'rgba(255,0,102,0.7)' },
+          { position: 1, color: 'rgba(255,128,128,0.6)' }
+        ],
+        [], // No Device A data on second chart
+        [8, 9, 9, 10, 8, 7, 5, 10]
+      );
+    };
+  </script>
+</body>
+</html>

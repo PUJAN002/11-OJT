@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CPU Comparison</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      color: #222;
+    }
+  .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;  
+  z-index: 999;      
+  background-color: rgba(0, 0, 0, 0.7); 
+}
+
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.new-badge {
+  background-color: #7d55ff;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 8px;
+  margin-left: 5px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-icon {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1);
+}
+    header {
+      background: linear-gradient(135deg, #1f0037, #3d0072);
+      color: white;
+      padding: 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+
+    .tags {
+      background: linear-gradient(135deg, #1f0037, #3d0072);
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tags button {
+      background: #fff;
+      border: none;
+      border-radius: 20px;
+      padding: 0.3rem 0.8rem;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .tags button:hover {
+      background: #ddd;
+    }
+
+    .container {
+      display: flex;
+      margin: 1rem;
+      gap: 1rem;
+    }
+
+    .sidebar {
+      width: 250px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-height: calc(100vh - 2rem);
+      overflow-y: auto;
+    }
+    .sidebar h3 {
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+
+    .grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      min-height: 120px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+    }
+    .card img {
+      width: 70px;
+      border-radius: 6px;
+    }
+    .score {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      background: #0066ff;
+      color: #fff;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-align: center;
+      line-height: 1.1;
+    }
+    .card-info {
+      flex: 1;
+    }
+    .card-info h4 {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: bold;
+    }
+    .features {
+      font-size: 0.8rem;
+      color: #555;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.3rem;
+    }
+    .features span {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .price {
+      font-size: 0.85rem;
+      color: #0066cc;
+      font-weight: bold;
+      margin-top: 0.2rem;
+    }
+
+    .add-btn {
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .add-btn:hover {
+      background: #0044aa;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+      <a href="../Home/home.html" style="text-decoration: none;"><div class="logo">VERSUS</div></a>
+      <ul class="nav-links">
+        <li><a href="../Category/category.html">CATEGORIES</a></li>
+        <li><a href="../SmartPhone/phone.html">SMARTPHONES</a></li>
+        <li><a href="../GraphicCards/graphic.html">GRAPHICCARDS</a></li>
+        <li><a href="../CPU/cpu.html">CPUS</a></li>
+        <li><a href="../Keyboard/keyboard.html">KEYBOARDS <span class="new-badge">NEW</span></a></li>
+      </ul>
+      <div class="nav-right">
+        <span>EN</span>
+        <img src="../images/account.png" class="user-icon" />
+      </div>
+    </div>
+  <header>
+    <h1>CPU Comparison</h1>
+  </header>
+
+  <div class="tags">
+    <button>TOP 10</button>
+    <button>INTEGRATED GRAPHICS</button>
+    <button>6-CORE</button>
+    <button>8-CORE</button>
+    <button>DESKTOP</button>
+    <button>LAPTOP</button>
+  </div>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h3>SORT BY</h3>
+      <select>
+        <option>Versus Score</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+      </select>
+
+      <h3>Price</h3>
+      <div class="price-range">
+        <input type="range" min="13206" max="495236" value="100000" style="width: 100%;">
+        <div>13,206 ₨ – 495,236 ₨</div>
+      </div>
+
+      <h3>Brands</h3>
+      <label><input type="checkbox"> AMD</label><br>
+      <label><input type="checkbox"> Intel</label><br>
+      <label><input type="checkbox"> Apple</label><br>
+    </aside>
+
+    <section class="grid">
+
+      <!-- 10 CPU Cards with icons -->
+      <div class="card">
+        <div class="score">100<br>Pts</div>
+        <img src="./c1.jpg" alt="CPU">
+        <div class="card-info">
+          <h4>AMD Ryzen Threadripper Pro 9995WX</h4>
+          <div class="price">NPR 1,889,444</div>
+          <div class="features">
+            <span><i class="fa-brands fa-microchip"></i> AMD</span>
+            <span><i class="fa-solid fa-desktop"></i> Desktop</span>
+            <span><i class="fa-solid fa-layer-group"></i> 4 nm</span>
+            <span><i class="fa-solid fa-gauge-high"></i> 96 × 2.5 GHz</span>
+          </div>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+
+      <div class="card">
+        <div class="score">93<br>Pts</div>
+        <img src="./c1.jpg" alt="CPU">
+        <div class="card-info">
+          <h4>AMD Ryzen Threadripper Pro 7995WX</h4>
+          <div class="price">NPR 1,445,864</div>
+          <div class="features">
+            <span><i class="fa-brands fa-microchip"></i> AMD</span>
+            <span><i class="fa-solid fa-desktop"></i> Desktop</span>
+            <span><i class="fa-solid fa-layer-group"></i> 5 nm</span>
+            <span><i class="fa-solid fa-gauge-high"></i> 96 × 2.5 GHz</span>
+          </div>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+
+      <div class="card">
+        <div class="score">91<br>Pts</div>
+        <img src="c1.jpg" alt="CPU">
+        <div class="card-info">
+          <h4>AMD Ryzen Threadripper Pro 9985WX</h4>
+          <div class="features">
+            <span><i class="fa-brands fa-microchip"></i> AMD</span>
+            <span><i class="fa-solid fa-desktop"></i> Desktop</span>
+            <span><i class="fa-solid fa-layer-group"></i> 4 nm</span>
+            <span><i class="fa-solid fa-gauge-high"></i> 64 × 3.2 GHz</span>
+          </div>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+
+      <div class="card">
+        <div class="score">86<br>Pts</div>
+        <img src="./c1.jpg" alt="CPU">
+        <div class="card-info">
+          <h4>AMD Ryzen Threadripper 7980X</h4>
+          <div class="price">NPR 889,810</div>
+          <div class="features">
+            <span><i class="fa-brands fa-microchip"></i> AMD</span>
+            <span><i class="fa-solid fa-desktop"></i> Desktop</span>
+            <span><i class="fa-solid fa-layer-group"></i> 5 nm</span>
+            <span><i class="fa-solid fa-gauge-high"></i> 64 × 3.2 GHz</span>
+          </div>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+
+      <div class="card">
+        <div class="score">79<br>Pts</div>
+        <img src="i1.jpg" alt="CPU">
+        <div class="card-info">
+          <h4>Intel Core Ultra 9 285K</h4>
+          <div class="price">NPR 101,563</div>
+          <div class="features">
+            <span><i class="fa-solid fa-microchip"></i> Intel</span>
+            <span><i class="fa-solid fa-desktop"></i> Desktop</span>
+            <span><i class="fa-solid fa-layer-group"></i> 3 nm</span>
+            <span><i class="fa-solid fa-gauge-high"></i> 8 × 3.7 & 16 × 3.2 GHz</span>
+          </div>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+
+      <div class="card">
+        <div class="score">79<br>Pts</div>
+        <img src="i1.jpg" alt="CPU">
+        <div class="card-info">
+          <h4>Intel Core Ultra 9 285HX</h4>
+          <div class="features">
+            <span><i class="fa-solid fa-microchip"></i> Intel</span>
+            <span><i class="fa-solid fa-laptop"></i> Laptop</span>
+            <span><i class="fa-solid fa-layer-group"></i> 3 nm</span>
+            <span><i class="fa-solid fa-gauge-high"></i> 8 × 2.8 & 16 × 3.2 GHz</span>
+          </div>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+
+      <div class="card">
+        <div class="score">78<br>Pts</div>
+        <img src="i1.jpg" alt="CPU">
+        <div class="card-info">
+          <h4>Intel Core Ultra 7 265HX</h4>
+          <div class="features">
+            <span><i class="fa-solid fa-microchip"></i> Intel</span>
+            <span><i class="fa-solid fa-laptop"></i> Laptop</span>
+            <span><i class="fa-solid fa-layer-group"></i> 3 nm</span>
+            <span><i class="fa-solid fa-gauge-high"></i> 8 × 2.6 & 12 × 2.3 GHz</span>
+          </div>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+
+      <div class="card">
+        <div class="score">77<br>Pts</div>
+        <img src="i1.jpg" alt="CPU">
+        <div class="card-info">
+          <h4>Intel Core Ultra 5 245HX</h4>
+          <div class="features">
+            <span><i class="fa-solid fa-microchip"></i> Intel</span>
+            <span><i class="fa-solid fa-laptop"></i> Laptop</span>
+            <span><i class="fa-solid fa-layer-group"></i> 3 nm</span>
+            <span><i class="fa-solid fa-gauge-high"></i> 6 × 3.1 & 8 × 2.6 GHz</span>
+          </div>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+
+      <div class="card">
+        <div class="score">77<br>Pts</div>
+        <img src="a1.jpg" alt="CPU">
+        <div class="card-info">
+          <h4>Apple M3 Ultra</h4>
+          <div class="features">
+            <span><i class="fa-brands fa-apple"></i> Apple</span>
+            <span><i class="fa-solid fa-desktop"></i> Desktop</span>
+            <span><i class="fa-solid fa-layer-group"></i> 3 nm</span>
+            <span><i class="fa-solid fa-gauge-high"></i> 24 × 3.7 & 8 × 3.4 GHz</span>
+          </div>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+
+      <div class="card">
+        <div class="score">76<br>Pts</div>
+        <img src="c1.jpg" alt="CPU">
+        <div class="card-info">
+          <h4>AMD Ryzen Threadripper Pro 9975WX</h4>
+          <div class="features">
+            <span><i class="fa-brands fa-microchip"></i> AMD</span>
+            <span><i class="fa-solid fa-desktop"></i> Desktop</span>
+            <span><i class="fa-solid fa-layer-group"></i> 4 nm</span>
+            <span><i class="fa-solid fa-gauge-high"></i> 24 × 4.2 GHz</span>
+          </div>
+        </div>
+        <button class="add-btn">+</button>
+      </div>
+
+    </section>
+  </div>
+</body>

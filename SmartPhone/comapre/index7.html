@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Smartphone Slider</title>
+<style>
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f9f9f9;
+    margin: 40px 20px;
+    color: #222;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  h3 {
+    font-weight: 700;
+    margin-bottom: 30px;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .arrow {
+    font-size: 25px;
+    color: #666;
+    user-select: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  .arrow:hover {
+    color: #333;
+  }
+
+  .item {
+    position: relative;
+    width: 110px;
+    margin: 0 6px;
+  }
+
+  .number-tag {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #1e1eff;
+    color: white;
+    font-weight: 600;
+    font-size: 0.75rem;
+    padding: 6px 8px;
+    border-radius: 5px;
+    box-shadow: 0 2px 6px rgb(30 30 255 / 0.6);
+  }
+
+  .item img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 12px rgb(0 0 0 / 0.1);
+  }
+
+  .caption {
+    margin-top: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #333;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h3>WHICH ARE THE BEST SMARTPHONES?</h3>
+    <div class="slider">
+      <div class="arrow">&#8249;</div>
+
+      <div class="item">
+        <div class="number-tag">1</div>
+        <img src="https://i.ibb.co/7r35wS5/samsung-s25-ultra.png" alt="Samsung Galaxy S25 Ultra" />
+        <div class="caption">Samsung Galaxy S25 Ultra</div>
+      </div>
+
+      <div class="item">
+        <div class="number-tag">2</div>
+        <img src="https://i.ibb.co/DWFFcyx/xiaomi-poco-f7.png" alt="Xiaomi Poco F7" />
+        <div class="caption">Xiaomi Poco F7</div>
+      </div>
+
+      <div class="item">
+        <div class="number-tag">3</div>
+        <img src="https://i.ibb.co/2Mkm0tX/iphone-16-pro-max.png" alt="Iphone 16 pro max" />
+        <div class="caption">Iphone 16 pro max</div>
+      </div>
+
+      <div class="item">
+        <div class="number-tag">4</div>
+        <img src="https://i.ibb.co/pvdYnM7/tecno-spark-40.png" alt="Tecno Spark 40" />
+        <div class="caption">Tecno Spark 40</div>
+      </div>
+
+      <div class="item">
+        <div class="number-tag">5</div>
+        <img src="https://i.ibb.co/Fw0hxQW/xiaomi-mix-flip-2.png" alt="Xiaomi Mix Flip 2" />
+        <div class="caption">Xiaomi Mix Flip 2</div>
+      </div>
+
+      <div class="arrow">&#8250;</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apple iPhone 16 Pro Max vs Samsung Galaxy S25 Ultra</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f6f8fb;
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .comparison-container {
+      max-width: 900px;
+      margin: 60px auto;
+      text-align: center;
+    }
+    .products-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 60px;
+      position: relative;
+    }
+    .product-column {
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .product-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      margin-top: 12px;
+      color: #222;
+    }
+    .product-storage {
+      background: #f8f9fa;
+      border-radius: 18px;
+      padding: 7px 26px;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #222;
+      margin-bottom: 14px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .product-image {
+      width: 210px;
+      height: 260px;
+      overflow: hidden;
+      border-radius: 32px;
+      margin-bottom: 8px;
+      box-shadow: 0 2px 22px rgba(40,44,50,0.13);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 32px;
+    }
+    .divider {
+      border-left: 2px solid #d3d7de;
+      height: 332px;
+      margin: 0 30px;
+      align-self: center;
+    }
+    .comparison-label {
+      margin-top: 44px;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000;
+      letter-spacing: 0.01em;
+    }
+    @media (max-width: 900px) {
+      .products-row {
+        flex-direction: column;
+        gap: 30px;
+      }
+      .divider {
+        border-left: none;
+        border-top: 2px solid #d3d7de;
+        width: 68%;
+        height: 0;
+        margin: 34px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="comparison-container">
+    <div class="products-row">
+      <div class="product-column">
+        <div class="product-title">Apple iphone 16 pro max</div>
+        <div class="product-storage">1TB</div>
+        <div class="product-image">
+          <!-- Replace the src with your own image for iPhone -->
+          <img src="apple-iphone.jpg" alt="Apple iPhone 16 Pro Max">
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div class="product-column">
+        <div class="product-title">Samsung Galaxy S25 Ultra</div>
+        <div class="product-storage">1TB</div>
+        <div class="product-image">
+          <!-- Replace the src with your own image for Samsung -->
+          <img src="samsung-galaxy.jpg" alt="Samsung Galaxy S25 Ultra">
+        </div>
+      </div>
+    </div>
+    <div class="comparison-label">
+      Apple iphone 16 Pro Max vs Samsung Galaxy S25 Ultra
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f6fa;
+      color: #222;
+    }
+
+
+    .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;  
+  z-index: 999;      
+  background-color: rgba(0, 0, 0, 0.7); 
+}
+
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.new-badge {
+  background-color: #7d55ff;
+  color: white;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 8px;
+  margin-left: 5px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-icon {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1);
+}
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #1f0037, #3d0072);
+      color: white;
+      padding: 2rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+
+    /* Layout */
+    .container {
+      display: flex;
+      margin: 1rem;
+      gap: 1rem;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .sidebar h3 {
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #444;
+    }
+    .sidebar input[type="checkbox"] {
+      margin-right: 0.5rem;
+    }
+    .price-range {
+      margin: 1rem 0;
+    }
+
+    /* Grid of cards */
+    .grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* ✅ 2 cards per row */
+      gap: 1rem;
+    }
+
+    /* Card */
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      min-height: 100px; /* ✅ Reduced height */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+    }
+    .card img {
+      width: 80px; /* ✅ smaller images */
+      height: auto;
+      
+    }
+    .card-info {
+      flex: 1;
+    }
+    .card-info h4 {
+      margin: 0;
+      font-size: 0.9rem; /* ✅ smaller font */
+      font-weight: bold;
+    }
+    .price {
+      color: #0066ff;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin: 0.2rem 0;
+    }
+    .features {
+      font-size: 0.75rem;
+      color: #555;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .add-btn {
+      background: #0066ff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .add-btn:hover {
+      background: #0044aa;
+    }
+
+      .rounded-btn {
+      background-color:blue; 
+      color: white;                
+      border: none;                 
+      padding: 15px 40px ;           
+      font-size: 16px;             
+      border-radius: 50px;          
+      cursor: pointer;   
+      margin-top: 20px;           
+      }
+
+      .footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  min-width: 150px;
+}
+
+.footer-column h4 {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: normal;
+  color: #aaa;
+  letter-spacing: 0.5px;
+}
+
+.footer-column a {
+  color: #fff;
+  text-decoration: none;
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.footer-column a:hover {
+  text-decoration: underline;
+}
+
+.footer-branding {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.footer-branding h2 {
+  font-size: 30px;
+  margin: 0 0 5px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer-branding p {
+  margin: 0 0 15px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.icon {
+
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+
+  
+}
